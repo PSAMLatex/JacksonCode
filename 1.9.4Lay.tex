@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{biblatex}
+
+\newenvironment{lcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\lbrace}
+  
+\begin{document}
+\author{Timothy Smith}
+\title{Lay Problem 1.9.4}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section{Problem 1.9.4}
+4. T: $\mathbb{R}^2 \longrightarrow \mathbb{R}^2 $ rotates (about the origin) through $-\pi/4$ radians (clockwise).[Hint: $T(\vec{e_1})=(\frac{1}{\sqrt{2}},\frac{-1}{\sqrt{2}})$] Find the standard matrix of T.
+\\
+\\
+ Lay provides us with half the standard matrix in the hint $T(\vec{e_1})=(\frac{1}{\sqrt{2}},\frac{-1}{\sqrt{2}})$. This states that the first column in the identity matrix $\vec{e_1}$  rotates into Lay's hint.
+ \[
+ \begin{pmatrix}
+ 1\\
+ 0
+ \end{pmatrix}
+ rotates\ into
+  \begin{pmatrix}
+\frac{1}{\sqrt{2}} \\
+ \frac{-1}{\sqrt{2}}
+ \end{pmatrix}
+\] 
+ If we examine the second column of our $\mathbb{R}^2$ identity matrix, we observe the following rotation.
+ \[
+  \begin{pmatrix}
+ 0\\
+ 1
+ \end{pmatrix}
+ rotates\ into
+  \begin{pmatrix}
+\frac{1}{\sqrt{2}} \\
+ \frac{1}{\sqrt{2}}
+ \end{pmatrix}
+ \]
+ Thus our standard matrix is
+\[
+ A=
+ \begin{pmatrix}
+ \frac{1}{\sqrt{2}}   &\frac{1}{\sqrt{2}}\\
+ \frac{-1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{pmatrix}
+ \]
+ 
+\end{document}

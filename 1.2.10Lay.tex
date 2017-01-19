@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{biblatex}
+
+
+\begin{document}
+\author{Timothy Smith}
+\title{Lay Problem 1.2.10 }
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 1.2.10}
+Find the general solution of the systems whose augmented matrices are given
+\[
+\begin{pmatrix} 
+1 & -2 & -1 & 3 \\
+3& 6 &-2 &2
+\end{pmatrix}
+\]
+Using row operations we achieve the following result. 
+\[
+\begin{pmatrix} 
+1 & -2 & -1 & 3 \\
+3& 6 &-2 &2
+\end{pmatrix}
+\sim
+\begin{pmatrix} 
+1 & -2 & -1 & 3 \\
+0& 0 &1 &-7
+\end{pmatrix}
+\sim
+\begin{pmatrix} 
+1 & -2 & 0 & -4 \\
+0& 0 &1 &-7
+\end{pmatrix}
+\]
+The linear system can now be displayed as
+$$
+x_1-2x_2=-4
+$$
+$$
+x_3=-7
+$$
+With $x_1$ and $ x_3$ as basic variables and $x_2 $ as a free variable. 
+The general solution to this problem then, is as follows
+
+ $$
+ x_1=-4+2x_2 
+ $$
+\begin{equation*}
+x_2= free\ variable
+\end{equation*}
+$$
+  x_3 =-7 
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
