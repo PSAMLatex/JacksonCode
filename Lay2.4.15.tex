@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,chngcntr,graphicx,float,biblatex}
+
+\begin{document}
+\author{Timothy Smith}
+\title{Lay Problem 1.9.4}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 2.4.15}
+
+Suppose $A_{11} $ is invertible. Find X and Y such that
+
+\[
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+I & 0 \\
+X & I 
+\end{pmatrix}
+\begin{pmatrix}
+A_{11} & 0 \\
+0 & S
+\end{pmatrix}
+\begin{pmatrix}
+I & Y \\
+0 & I
+\end{pmatrix}
+\]
+where $ S= A_{22}-A_{21}A^{-1}_{11}A_{12}. $. The matrix  S is called the Schur complement of $A_{11}$. Likewise, if $A_{22}$ is invertible, the matrix $ A_{11}-A_{12}A^{-1}_{22}A_{21} $ is called the complement of $ A_{22}$. Such expressions occur frequently in the theory of systems engineering, and elsewhere.
+\\
+\\  
+\begin{equation}
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+I & 0 \\
+X & I 
+\end{pmatrix}
+\begin{pmatrix}
+A_{11} & 0 \\
+0 & S
+\end{pmatrix}
+\begin{pmatrix}
+I & Y \\
+0 & I
+\end{pmatrix}
+\end{equation}
+
+First we multiply the matrices 
+\begin{equation}
+\begin{pmatrix}
+A_{11} & 0 \\
+0 & S 
+\end{pmatrix}
+\begin{pmatrix}
+I \\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}I\\
+0
+\end{pmatrix}
+\end{equation}
+\begin{equation}
+\begin{pmatrix}
+A_{11} & 0 \\
+0 & S 
+\end{pmatrix}
+\begin{pmatrix}
+Y \\
+I
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}Y\\
+SI
+\end{pmatrix}
+\end{equation}
+After multiplying the matrices our equation resembles
+\begin{equation}
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+I & 0 \\
+X & I 
+\end{pmatrix}
+\begin{pmatrix}
+A_{11} & A_{11}Y \\
+0 & S
+\end{pmatrix}
+\end{equation}
+We now multiply the two matrices on the right side of the equation to arrive at a singular matrix. 
+\begin{equation}
+\begin{pmatrix}
+I & 0 \\
+X & I 
+\end{pmatrix}
+\begin{pmatrix}
+A_{11}\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11} \\
+XA_{11}
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{pmatrix}
+I & 0 \\
+X & I 
+\end{pmatrix}
+\begin{pmatrix}
+A_{11}Y\\
+S
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}Y \\
+XA_{11}Y+S
+\end{pmatrix}
+\end{equation}
+\\
+\\
+We now arrive at the following equation
+
+\begin{equation}
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}& A_{11}Y \\
+XA_{11} & XA_{11}Y +S
+\end{pmatrix}
+\end{equation}
+We now have the following resulatant
+\begin{align*}
+ A_{11}&=A_{11}  \\
+A_{12}&=A_{11}Y \\
+A_{21}&=XA_{11}\\
+A_{22}&=XA_{11}Y+S
+\end{align*}
+Since $ A_{11} $ is invertible we can solve for both X and Y by multiplying by the inverse.
+where 
+$$ Y=A^{-1}_{11}A_{12}$$
+and
+$$ X=A_{21}A^{-1}_{11}$$
+Solving for S and substituting in for X and Y we arrive at the Schur complement of $A_{11}$
+ $$ S= A_{22}-A_{21}A^{-1}_{11}A_{12} $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
