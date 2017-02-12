@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,chngcntr,graphicx,float,biblatex,tikz,physics}
+
+\begin{document}
+\author{Timothy Smith}
+\title{Townsend}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 1.8}
+The state of a spin $ \frac{1}{2}$  particle  is given by 
+$$ \ket{\Psi}=\frac{i}{\sqrt{3}} \ket{+z}+\sqrt{\frac{2}{3}} \ket{-z} $$
+\\
+\\
+What are $\expval{S_z} $ and $\Delta S_z $ for this state? Suppose  that an experiment is carried out on $100$ particles, each of which is in this state. Make up a reasonable set of data for $S_z$ that could result for from such an experiment. What if the measurements were carried out on $1,000$  particles? What about $10,000$ ?
+
+To find $\expval{S_z}$ we multiple $\ket{\Psi}$ by $\bra{+z} $and $\bra{-z} $ and find
+\\
+$$\braket{+z}{\Psi}=\frac{i}{\sqrt{3}} \braket{+z}{+z}+\sqrt{\frac{2}{3}}  \braket{+z}{-z} $$
+and
+$$\braket{-z}{\Psi}=\frac{i}{\sqrt{3}} \braket{-z}{+z}+\sqrt{\frac{2}{3}}  \braket{-z}{-z} $$
+
+The expectation value for this problem then is as follows
+\begin{equation}
+\expval{S_z}=\abs{\braket{\vb{+z}}{\Psi}}^2\frac{\hbar}{2}+\abs{\braket{\vb{-z}}{\Psi}}^2\frac{-\hbar}{2}
+\end{equation}
+The $\abs{\braket{\vb{+z}}{\Psi}}^2$ and $\abs{\braket{\vb{-z}}{\Psi}}^2$ are the equations above multiplied by their complex conjugates. 
+Thus the expectation value is 
+\begin{equation}
+\expval{S_z}=\frac{1}{3}\frac{\hbar}{2}+ \frac{2}{3}\frac{-\hbar}{2}=\frac{-\hbar}{6}
+\end{equation}
+To find $ \Delta S_z$  we have to find the $\expval{S{_z}{^2}}$ which is as follows
+\begin{equation}
+\expval{S{_z}{^2}}=\frac{1}{3}{(\frac{\hbar}{2})}^2+ \frac{2}{3}{(\frac{-\hbar}{2})}^2=\frac{3\hbar^2}{12}
+\end{equation}
+$ \Delta S_z$ equals 
+\begin{equation}
+\Delta S_z=\sqrt{\expval{S{_z}{^2}}-\expval{S_z}}=\sqrt{\frac{8}{36}}\hbar=\frac{\sqrt{2}}{3}\hbar
+\end{equation}
+For the questions about one hundred, one thousand, and ten thousand particles we take the square root of those numbers to find the amount of fluctuations we expect for the amount of particles. The values of these are $10 $, $ 31 $ and $100$ respectively.  Our probabilities are as follows $\frac{1}{3}$ for $\hbar/2$ and $\frac{2}{3}$ for $-\hbar/2$. This means we should expect fluctuations that span ten particles from our probabilities for $\hbar/2$ and $-\hbar/2$ in the case of measurements on 100 particles.  This same logic continues for the other cases, but whats interesting is how the percentage of expected particle fluctuations decreases as the number of measurements increases. The percentage decrease from ten percent to three percent to one percent as the number of particles increase. 
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

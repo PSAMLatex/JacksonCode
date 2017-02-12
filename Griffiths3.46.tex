@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,chngcntr,graphicx,float,biblatex,tikz,physics}
+
+\begin{document}
+\author{Timothy Smith}
+\title{Griffiths}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 3.46}
+3.46) A thin insulating rod, running from $z=-a$ to $z=a$ carries the indicated line charges. In each case find the leading term in the multipole expansion of the potential. 
+a)$ \lambda= kcos(\frac{\pi z}{2a})$ b) $ \lambda= ksin(\frac{\pi z}{a})$ c) $ \lambda= kcos(\frac{\pi z}{a})$
+To find the potential we need equation $3.96 $ on page 153 in the text.
+\begin{equation}
+V(\vb{r})=\frac{1}{4\pi\epsilon_0}[\frac{1}{r}\int_{}{}\rho(\vb{r'})d\tau'+\frac{1}{r^2}\int_{}{}r'\rho(\vb{r'})cos(\alpha)d\tau'+\frac{1}{r^3}\int_{}{}(r')^2\rho(\vb{r'})(\frac{3}{2}cos(\alpha)-\frac{1}{2})d\tau]
+\end{equation}
+where 
+$$\frac{1}{4\pi\epsilon_0}\frac{1}{r}\int_{}{}\rho(\vb{r'})d\tau'$$
+is the monopole term
+$$\frac{1}{4\pi\epsilon_0}\frac{1}{r^2}\int_{}{}r'\rho(\vb{r'})cos(\alpha)d\tau'$$
+is the dipole term and
+$$\frac{1}{4\pi\epsilon_0}\frac{1}{r^3}\int_{}{}(r')^2\rho(\vb{r'})(\frac{3}{2}cos(\alpha)-\frac{1}{2})d\tau$$ 
+is the quadrupole term
+\\
+\\
+Luckily some simplifications can be made since we are dealing with a line charge, as the angle between source point and field point is zero in this case. This means that $cos(\alpha)=cos(0)=1$ thus making  our integrals more manageable. Also, in the case of a line charge $\rho$ becomes $\lambda$ and $d\tau$ becomes $dl$ which equals $dz$ in this case as our rod is oriented along the z axis. We are now set up to solve for the potential of the line charges.
+\\
+\\
+a)$ \lambda= kcos(\frac{\pi z}{2a})$
+\begin{equation}
+k\int_{-a}^{a}cos(\frac{\pi z}{2a})dz
+=
+\frac{2ak}{\pi}sin(\frac{\pi z}{2a}) \Big|_{-a}^a
+\end{equation}
+which is nonzero and thus we have found our leading term, thus the potential for part a is 
+\begin{equation}
+V=\frac{1}{4\pi\epsilon_0}\frac{4ak}{\pi r}
+\end{equation}
+\\
+\\
+b) $ \lambda= ksin(\frac{\pi z}{a})$
+\begin{equation}
+k\int_{-a}^{a}sin(\frac{\pi z}{a})dz
+\end{equation}
+This integral equals zero so we have to move on to the dipole term. 
+\begin{equation}
+k\int_{-a}^{a}zsin(\frac{\pi z}{a})dz
+\end{equation}
+The integral is solvable by parts where $d=z$, $du=1$ , $ dv=sin(\frac{\pi z}{a})$ and $v=-cos(\frac{\pi z}{a})\frac{a}{\pi}$
+thus
+\begin{equation}
+k\int_{-a}^{a}zsin(\frac{\pi z}{a})dz=-zcos(\frac{\pi z}{a})\frac{a}{\pi} +\int_{-a}^{a}cos(\frac{\pi z}{a})\frac{a}{\pi}dz
+\end{equation}
+the second term goes to zero as $ sin(\pm\pi) $ equals zero the first term though is nonzero and we have found our leading term. 
+The potential is 
+\begin{equation}
+V=\frac{1}{4\pi\epsilon_0}\frac{2ka^2}{\pi r^2}cos(\theta)
+\end{equation}
+\\
+\\
+c) $ \lambda= kcos(\frac{\pi z}{a})$\\
+\\
+If we examine our work in part b  we notice that the monopole term is zero as this is the same integral as the second term when we were evaluating by parts in  part b with only a difference in constants.
+\begin{equation}
+\int_{-a}^{a}cos(\frac{\pi z}{a})
+=
+0
+\end{equation}
+Now we move on to the dipole term
+\begin{equation}
+k\int_{-a}^{a}zcos(\frac{\pi z}{a})dz
+\end{equation}
+Again we integrate by parts with $d=z$, $du=1$ , $ dv=cos(\frac{\pi z}{a})$ and $v=sin(\frac{\pi z}{a})\frac{a}{\pi}$
+which becomes
+\begin{equation}
+k\int_{-a}^{a}zcos(\frac{\pi z}{a})dz=zsin(\frac{\pi z}{a})\frac{a}{\pi} -\int_{-a}^{a}sin(\frac{\pi z}{a})\frac{a}{\pi}dz
+\end{equation}
+both these terms go to zero and we are on to the quadrupole term.
+\begin{equation}
+k\int_{-a}^{a}z^2cos(\frac{\pi z}{a})dz
+\end{equation}
+and once again we will proceed by parts  with $d=z^2$, $du=2z$ , $ dv=cos(\frac{\pi z}{a})$ and $v=sin(\frac{\pi z}{a})\frac{a}{\pi}$
+\\
+\begin{equation}
+k\int_{-a}^{a}z^2cos(\frac{\pi z}{a})dz=z^2sin(\frac{\pi z}{a})\frac{a}{\pi} -\int_{-a}^{a}zsin(\frac{\pi z}{a})\frac{2a}{\pi}dz
+\end{equation}
+and we must by parts by parts
+\\
+the second term by parts becomes $d=z$, $du=1$ , $ dv=sin(\frac{\pi z}{a})\frac{2a}{\pi}$ and $v=-cos(\frac{\pi z}{a})(\frac{2a}{\pi})^2$
+Thus our integral becomes
+\begin{equation}
+k\int_{-a}^{a}z^2cos(\frac{\pi z}{a})dz=z^2sin(\frac{\pi z}{a})\frac{a}{\pi} -zcos(\frac{\pi z}{a})(\frac{a}{\pi})^2 +\int_{-a}^{a}cos(\frac{\pi z}{a})(\frac{2a}{\pi})^2dz
+\end{equation}
+The first and the third term are zero leaving us with 
+\begin{equation}
+-zcos(\frac{\pi z}{a})\frac{a}{\pi} \Big|_{-a}^a
+\end{equation}
+which equals
+\begin{equation}
+\frac{-2a^3k}{\pi^2}
+\end{equation}
+
+ Thus found our leading term and can write our potential
+ \begin{equation}
+V=\frac{1}{4\pi\epsilon_0}\frac{-2a^3k}{\pi^2}(\frac{3}{2}cos(\theta)-\frac{1}{2})
+\end{equation}
+
+
+
+
+
+
+
+\end{document}
