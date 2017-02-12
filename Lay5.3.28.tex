@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,chngcntr,graphicx,float,biblatex,tikz,physics}
+
+\begin{document}
+\author{Timothy Smith}
+\title{Lay}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 5.3.28}
+Show that if A  has n linearly independent eigenvectors, then so does $A^T$ [Hint: use the Diagonalization Theorem]
+\\
+\\
+If A has n linearly independent eigenvectors thus A is diagonalizable and the columns of P are n linearly independent vectors of A. 
+\begin{equation}
+A=PDP^{-1}
+\end{equation}
+The transpose of this is 
+\begin{equation}
+A^T=(PDP^{-1})^T
+\end{equation}
+Now we can use the Theorem 3 d.) on page 101 of Lay. 
+\begin{equation*}
+(AB)^T=B^TA^T
+\end{equation*}
+Our equation now becomes 
+\begin{equation}
+A^T=(P^{-1})^TDP^T
+\end{equation}
+which equals
+\begin{equation}
+P'D(P^{-1})'
+\end{equation}
+This means $A^T$ has n linearly independent eigenvectors if A does as well. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

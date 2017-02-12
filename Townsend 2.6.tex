@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,chngcntr,graphicx,float,biblatex,tikz,physics}
+
+\begin{document}
+\author{Timothy Smith}
+\title{Townsend}
+\maketitle
+
+\counterwithin*{equation}{section}
+\section*{Problem 2.6}
+Evaluate $\hat{R} (\theta \vb{j})\ket{+z}$ where $\hat{R} (\theta \vb{j})= e^{-i\hat{J_z}\theta/\hbar}$ is the operator that rotates kets counterclockwise by the angle $\theta$ about the y axis. Show that $\hat{R} (\frac{\pi}{2} \vb{j})\ket{+z} = \ket{+x}$ Suggestion: Express $\ket{+z} $ as a superposition of the kets $\ket{+y} $ and $\ket{-y}$ and take advantage of the face that $\hat{J_y}\ket{\pm y}=(\pm \frac{\hbar}{2}\ket{\pm y}$; then switch back to the $\ket{+z}-\ket{-z}$ basis. 
+\\
+\\
+Following Townsend's suggestion we need to find  $\ket{+z}$ in the $S_y$ basis. which means finding 
+$\braket{+y}{+z}$ and $\braket{-y}{+z}$.
+First we need $\bra{+y}$ and $\bra{-y}$ as a superposition of $\bra{\pm z}$
+\\
+\\
+$$ \bra{+y}=\frac{1}{\sqrt{2}}(\bra{+z}-i\bra{-z})$$
+$$ \bra{-y}=\frac{1}{\sqrt{2}}(\bra{+z}+i\bra{-z})$$
+\\
+Solving for $\braket{+y}{+z}$ and $\braket{-y}{+z}$ as follows
+\begin{equation}
+\braket{+y}{+z}
+=
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+1  & -i
+\end{pmatrix}
+\begin{pmatrix}
+1  \\
+0
+\end{pmatrix}
+=\frac{1}{\sqrt{2}}
+\end{equation}
+\\
+and
+\\
+\begin{equation}
+\braket{-y}{+z}
+=
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+1  & i
+\end{pmatrix}
+\begin{pmatrix}
+1  \\
+0
+\end{pmatrix}
+=\frac{1}{\sqrt{2}}
+\end{equation}
+\\
+thus $ \ket{+z}$ in an $S_y$ basis is 
+\begin{equation}
+\ket{+z}=\frac{1}{\sqrt{2}}(\ket{+y}+\ket{-y})
+\end{equation}
+\\
+Taking advantage of the fact that $\hat{J_y}\ket{\pm y}=(\pm \frac{\hbar}{2}\ket{\pm y}$ we can write our rotation operator as 
+$$ \hat{R} (\theta \vb{j})=e^{\mp i\frac{\theta}{2}}$$
+Applying the rotation operator to $\ket{+z}$ 
+\begin{equation}
+\hat{R}(\theta\vb{j})\ket{+z}
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+e^{- i\frac{\theta}{2}} \\
+e^{ i\frac{\theta}{2}}
+\end{pmatrix}
+\end{equation}
+Using $\pi/2$ as our $\theta$ our equation is now
+
+\begin{equation}
+\hat{R}(\frac{\pi}{2}\vb{j})\ket{+z}
+=
+\frac{1}{\sqrt{2}}(e^{- i\frac{\pi}{4}}\ket{+y}+e^{ i\frac{\pi}{4}}\ket{-y})
+\end{equation}
+factoring out a $e^{- i\frac{\pi}{4}}$ our equation becomes
+\begin{equation}
+\hat{R}(\frac{\pi}{2}\vb{j})\ket{+z}
+=
+\frac{1}{\sqrt{2}}e^{- i\frac{\pi}{4}}(\ket{+y}+e^{ i\frac{\pi}{2}}\ket{-y})
+\end{equation}
+which equals 
+
+\begin{align}
+=&\frac{1}{\sqrt{2}}(\frac{1}{\sqrt{2}}-\frac{i}{\sqrt{2}})(\ket{+y}+i\ket{-y})
+\\
+=&(\frac{1}{2}-\frac{i}{2})(\ket{+y}+i\ket{-y})
+\\
+=&(\frac{1}{2}-\frac{i}{2})(\ket{+y}+i\ket{-y})
+\\
+=&(\frac{1}{2})(1-i\ket{+y}1+i\ket{-y})
+\end{align}
+\\
+In matrix form our equation in a y basis is 
+\begin{equation}
+\hat{R}(\frac{\pi}{2}\vb{j})\ket{+z}
+=
+\frac{1}{2}
+\begin{pmatrix}
+1-i  \\
+1+i 
+\end{pmatrix}
+\end{equation}
+In problem $2.4$ done in class we had previous found 
+\begin{equation}
+\ket{+x}
+\xrightarrow[S_y]{}
+\frac{1}{2}
+\begin{pmatrix}
+1-i  \\
+1+i 
+\end{pmatrix}
+\end{equation}
+Thus  $\hat{R}(\frac{\pi}{2}\vb{j})\ket{+z}=\ket{+x}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
